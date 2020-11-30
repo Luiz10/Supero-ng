@@ -1,0 +1,53 @@
+<form [formGroup]="formGroup">
+    <div class="ui-g">
+        <div class="ui-g-12">
+            <div class="ui-g-4 input">
+                <label>Título:</label>
+                <input type="text" formControlName="titulo" uppercase id="txtInput" pInputText />
+            </div>
+            <div class="status">
+                <label>Status:</label>
+                <p-radioButton name="status" value=1 formControlName="status" label="Em andamento"></p-radioButton>
+            </div>
+        </div>
+        <div class="ui-g-12 input">
+            <label>Descrição:</label>
+            <textarea pInputTextarea formControlName="descricao" id="txtDescricao" uppercase [rows]="5" [cols]="30"></textarea>
+        </div><br>
+        <div class="ui-g-12">
+            <button pButton type="button" label="Adicionar" (click)="adicionar()"></button>
+        </div>
+        <div class="ui-g">
+            <p-table [value]="listaTask" selectionMode="single" (onRowSelect)="onRowSelect($event)"
+            (onRowUnselect)="unRowSelect()"
+            [(selection)]="taskSelecionado">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>ID</th>
+                        <th>Titulo</th>
+                        <th>Descricao</th>
+                        <th>Status</th>
+                        <th>Opções</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-fora>
+                    <tr [pSelectableRow]="fora">
+                        <td>{{fora.id}}</td>
+                        <td>{{fora.titulo}}</td>
+                        <td>{{fora.descricao}}</td>
+                        <td>{{fora.status | status}}</td>
+                        <td>
+                            <button pButton icon="pi pi-trash" title="Excluir" (click)="excluir(fora)"></button>&nbsp;
+                            <button pButton icon="pi pi-file" title="Editar" (click)="editar()" [disabled]="btnEditarTask"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+    <div class="ui-g-12">
+        <p-dialog header="Edição de task" *ngIf="editarTask" [(visible)]="editarTask" [modal]="true">
+            <app-form-task [taskEditada]="taskSelecionado" (eventEmitSalvar)="eventEmitSalvar($event)"></app-form-task>
+        </p-dialog>
+    </div>
+</form>

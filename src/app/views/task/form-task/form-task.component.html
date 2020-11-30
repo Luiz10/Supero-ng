@@ -1,0 +1,24 @@
+<form [formGroup]="formGroup">
+    <div class="ui-g">
+        <div class="ui-g-12 input">
+            <label>Id:</label>
+            <input readonly pInputText id="txtCampo" formControlName="id">
+        </div>
+        <div class="ui-g-12 input">
+            <label>Titulo:</label>
+            <input type="text" pInputText id="txtCampo" formControlName="titulo">
+        </div>
+        <div class="ui-g-12 input">
+            <label>Descrição:</label>
+            <input type="text" pInputText id="txtCampo" formControlName="descricao">
+        </div>
+        <div class="ui-g-12">
+            <label>Status:</label>
+            <p-radioButton name="status" value=1 formControlName="status" label="Em andamento"></p-radioButton>
+            <p-radioButton name="status" value=0 formControlName="status" label="Finalizado"></p-radioButton>
+        </div><br />
+        <div class="ui-g-12">
+            <button pButton label="Salvar" title="Salvar" icon="pi pi-save" (click)="salvarForm()"></button>
+        </div>
+    </div>
+</form>

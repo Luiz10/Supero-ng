@@ -1,0 +1,27 @@
+#txtInput{
+    width: 56%;
+    height: 2em;
+    text-transform: uppercase;
+}
+.input-titulo{
+    height: 2em;
+   
+}
+.txtRadio{
+    font-family: 'Montserrat', sans-serif;
+}
+.status{
+    margin-left: 70%;
+    position: absolute;
+    top: 4.5%
+}
+.input{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    font-family: 'Montserrat', sans-serif;
+}
+#txtDescricao{
+    text-transform: uppercase;
+}

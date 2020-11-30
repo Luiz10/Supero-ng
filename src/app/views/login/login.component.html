@@ -1,0 +1,15 @@
+<form [formGroup]="formGroup">
+    <div class="ui-g form">
+        <div class="ui-g-12 input-username">
+            <label>Username:</label>
+            <input type="text" id="txtInput" uppercase pInputText formControlName="username">
+        </div>
+        <div class="ui-g-12 input-password">
+            <label>Senha</label>
+            <input type="password" id="txtInput" pInputText formControlName="senha">
+        </div><br>
+        <div class="ui-g-12 btn-login">
+            <button pButton type="button" label="Login" (click)="login()"></button>
+        </div>
+    </div>
+</form>

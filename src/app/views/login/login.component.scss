@@ -1,0 +1,23 @@
+.input-password{
+    display: flex;
+    flex-direction: column;
+}
+.input-username{
+    display: flex;
+    flex-direction: column;
+}
+.btn-login{
+    display: flex;
+    
+}
+#txtInput{
+    width: 56%;
+    height: 2em;
+}
+label{
+    font-family: 'Montserrat', sans-serif;
+}
+.form{
+    margin: 13%;
+    margin-left: 36%;
+}
